@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -41,6 +42,7 @@
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
+			<a href="logo"><img id="logo" src="https://api.logo.com/api/v2/images?logo=logo_869ed87a-80f5-4772-88e3-7d9d9d397843&u=1714325977509&format=svg&margins=166&width=1000&height=750&fit=contain"></a>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
@@ -58,4 +60,13 @@
 
 		<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
 	</body>
+<style>
+	#logo {
+  		display: inline-block;
+ 		margin: 10px;
+ 		float: left;
+ 		width: 175px;
+  		border-radius: 75%;
+}
+</style>
 </html>
